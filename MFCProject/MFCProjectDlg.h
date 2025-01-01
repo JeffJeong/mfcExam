@@ -3,7 +3,6 @@
 //
 
 #include "CDlgImage.h"
-
 #pragma once
 
 
@@ -47,4 +46,8 @@ public:
 	void drawCircle(unsigned char* fm, int x, int y, int nRadius, int nGray);
 	BOOL isInCircle(int i, int j, int nCenterX, int nCenterY, int nRadius);
 	afx_msg void OnDestroy();
+	CEdit m_endX;
+	CEdit m_endY;
+	CEdit m_startX;
+	CEdit m_startY;
 };

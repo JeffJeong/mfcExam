@@ -52,13 +52,18 @@ END_MESSAGE_MAP()
 
 CMFCProjectDlg::CMFCProjectDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_MFCPROJECT_DIALOG, pParent)
-{
+{	
+
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
 void CMFCProjectDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_EDIT_END_X, m_endX);
+	DDX_Control(pDX, IDC_EDIT_END_Y, m_endY);
+	DDX_Control(pDX, IDC_EDIT_START_X, m_startX);
+	DDX_Control(pDX, IDC_EDIT_START_Y, m_startY);
 }
 
 BEGIN_MESSAGE_MAP(CMFCProjectDlg, CDialogEx)
@@ -163,7 +168,7 @@ CString g_strFileImage = _T("C:\\image\\save.bmp");
 
 void CMFCProjectDlg::OnBnClickedBtnDraw()
 {
-	m_pDlgImage->ShowWindow(SW_SHOW);
+	//m_pDlgImage->ShowWindow(SW_SHOW);
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	// Draw 버튼 클릭시 (x1, y1) 좌표를 중심으로하는 랜덤한 크기의 원을 그립니다.
 	int nWidth = 640;
@@ -172,7 +177,7 @@ void CMFCProjectDlg::OnBnClickedBtnDraw()
 	if (m_image != NULL) {
 		m_image.Destroy();
 	}
-	m_image.Create(nWidth, -nHeight, nBpp);
+	m_image.Create(nWidth, nHeight, nBpp);
 	if (nBpp == 8) {
 		static RGBQUAD rgb[256];
 		for (int i = 0; i < 256; i++)
@@ -181,7 +186,17 @@ void CMFCProjectDlg::OnBnClickedBtnDraw()
 	}
 	int nPitch = m_image.GetPitch();
 	unsigned char* fm = (unsigned char*)m_image.GetBits();
-	memset(fm, 0xff, nWidth * nHeight);
+	//시작좌표값 불러오는코드
+	CString mText;
+	m_startX.GetWindowText(mText);
+	int nCircleX = _wtoi(mText.GetBuffer()); //중점 X좌표
+	mText.ReleaseBuffer();
+	m_startY.GetWindowText(mText);
+	int nCircleY = _wtoi(mText.GetBuffer()); //중점 Y좌표
+	mText.ReleaseBuffer();
+	int rRange = ((nWidth - nCircleX) > (nHeight - nCircleY)) ? (nCircleX) : (nCircleY);
+	int radius = rand() % rRange;
+	//drawCircle(fm, nCircleX, nCircleY, radius, 60);
 
 	//for (int j = 0; j < nHeight; j++) {
 	//	for (int i = 0; i < nWidth; i++) {
@@ -239,8 +254,6 @@ void CMFCProjectDlg::moveRect() {
 	int nPitch = m_image.GetPitch();
 	int nRadius = 20;
 	unsigned char* fm = (unsigned char*)m_image.GetBits();
-
-	//memset(fm, 0xff, nWidth * nHeight);//Clear
 	drawCircle(fm, nSttX, nSttY, nRadius, 0xff);
 	drawCircle(fm, ++nSttX, ++nSttY, nRadius, nGray);
 
