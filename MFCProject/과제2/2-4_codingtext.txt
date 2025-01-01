@@ -1,0 +1,14 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int a, int b) {
+    int answer = 0;
+    string n_a = to_string(a);
+    string n_b = to_string(b);
+    int sol1 = stoi(n_a+n_b);
+    int sol2 = stoi(n_b+n_a);
+    answer = sol1 >= sol2 ? sol1 : sol2;
+    return answer;
+}

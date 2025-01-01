@@ -2,6 +2,8 @@
 // MFCProjectDlg.h: 헤더 파일
 //
 
+#include "CDlgImage.h"
+
 #pragma once
 
 
@@ -13,6 +15,8 @@ private:
 	CImage m_image;
 	BOOL validImgPos(int x, int y);
 public:
+	CDlgImage* m_pDlgImage;
+
 	CMFCProjectDlg(CWnd* pParent = nullptr);	// 표준 생성자입니다.
 
 // 대화 상자 데이터입니다.
@@ -42,4 +46,5 @@ public:
 	void moveRect();
 	void drawCircle(unsigned char* fm, int x, int y, int nRadius, int nGray);
 	BOOL isInCircle(int i, int j, int nCenterX, int nCenterY, int nRadius);
+	afx_msg void OnDestroy();
 };

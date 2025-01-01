@@ -1,0 +1,15 @@
+#include <string>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+long long solution(int r1, int r2) {
+    long long answer = 0;
+    for(int y=1; y<=r2; y++){
+        int maxX = (int)sqrt((long long)r2*r2-(long long)y*y);
+        int minX = r1 >= y ? ceil(sqrt(((long long)r1*r1-(long long)y*y))):0;
+        answer += (maxX-minX+1);
+    }
+    return answer*4;
+}

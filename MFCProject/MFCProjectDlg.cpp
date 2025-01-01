@@ -68,6 +68,7 @@ BEGIN_MESSAGE_MAP(CMFCProjectDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BTN_ACTION, &CMFCProjectDlg::OnBnClickedBtnAction)
 	ON_BN_CLICKED(IDC_BTN_DRAW, &CMFCProjectDlg::OnBnClickedBtnDraw)
 	ON_BN_CLICKED(IDC_BTN_OPEN, &CMFCProjectDlg::OnBnClickedBtnOpen)
+	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
 
@@ -103,7 +104,9 @@ BOOL CMFCProjectDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
-
+	m_pDlgImage = new CDlgImage;
+	m_pDlgImage->Create(IDD_CDlgImage, this);
+	
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -160,6 +163,7 @@ CString g_strFileImage = _T("C:\\image\\save.bmp");
 
 void CMFCProjectDlg::OnBnClickedBtnDraw()
 {
+	m_pDlgImage->ShowWindow(SW_SHOW);
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	// Draw 버튼 클릭시 (x1, y1) 좌표를 중심으로하는 랜덤한 크기의 원을 그립니다.
 	int nWidth = 640;
@@ -205,17 +209,19 @@ void CMFCProjectDlg::OnBnClickedBtnAction()
 }
 
 
-
+#include "CDlgImage.h"
 void CMFCProjectDlg::OnBnClickedBtnOpen()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	// Open 버튼 클릭시 탐색기 창을 통해 이미지를 1개를 선택해서 불러오고 다이얼로그에 출력합니다.
 	// 이 때 출력된 원의 중심 좌표에 X 모양을 그리고 좌표값을 같이 표시합니다.
-	if (m_image != NULL) {
-		m_image.Destroy();
-	}
-	m_image.Load(g_strFileImage);
-	UpdateDisplay();
+	//if (m_image != NULL) {
+	//	m_image.Destroy();
+	//}
+	//m_image.Load(g_strFileImage);
+	//UpdateDisplay();
+	CDlgImage dlg;
+	dlg.DoModal();
 }
 
 void CMFCProjectDlg::UpdateDisplay() {
@@ -276,4 +282,11 @@ BOOL CMFCProjectDlg::isInCircle(int i, int j, int nCenterX, int nCenterY, int nR
 		bRet = true;
 	}
 	return bRet;
+}
+
+void CMFCProjectDlg::OnDestroy()
+{
+	CDialogEx::OnDestroy();
+	delete m_pDlgImage;
+	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 }

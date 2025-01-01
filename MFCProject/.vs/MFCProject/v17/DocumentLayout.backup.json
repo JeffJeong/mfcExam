@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jeong\\source\\assignment\\MFCProject\\",
+  "WorkspaceRootPath": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProjectDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProjectDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|solutionrelative:MFCProjectDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProjectDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProjectDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|solutionrelative:MFCProjectDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProject.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     ",
+      "AbsoluteMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\CDlgImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|solutionrelative:CDlgImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProject.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     ",
       "RelativeMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|solutionrelative:MFCProject.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     "
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProject.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0087 2$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{A0FF449D-225F-42DF-B16D-A2B17C6B4EDD}|MFCProject.vcxproj|solutionrelative:MFCProject.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0087 2$  \u0022     "
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +30,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MFCProject.rc - IDD_CDlgImage - Dialog",
+              "DocumentMoniker": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProject.rc",
+              "RelativeDocumentMoniker": "MFCProject.rc",
+              "ToolTip": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProject.rc - IDD_CDlgImage - Dialog",
+              "RelativeToolTip": "MFCProject.rc - IDD_CDlgImage - Dialog",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-01-01T12:39:55.242Z",
+              "EditorCaption": " - IDD_CDlgImage - Dialog"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MFCProject.rc - IDD_MFCPROJECT_DIALOG - Dialog",
+              "DocumentMoniker": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProject.rc",
+              "RelativeDocumentMoniker": "MFCProject.rc",
+              "ToolTip": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProject.rc - IDD_MFCPROJECT_DIALOG - Dialog",
+              "RelativeToolTip": "MFCProject.rc - IDD_MFCPROJECT_DIALOG - Dialog",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-01-01T12:39:52.155Z",
+              "EditorCaption": " - IDD_MFCPROJECT_DIALOG - Dialog"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CDlgImage.h",
+              "DocumentMoniker": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\CDlgImage.h",
+              "RelativeDocumentMoniker": "CDlgImage.h",
+              "ToolTip": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\CDlgImage.h",
+              "RelativeToolTip": "CDlgImage.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-01T12:36:46.596Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MFCProjectDlg.h",
-              "DocumentMoniker": "C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProjectDlg.h",
+              "DocumentMoniker": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProjectDlg.h",
               "RelativeDocumentMoniker": "MFCProjectDlg.h",
-              "ToolTip": "C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProjectDlg.h",
+              "ToolTip": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProjectDlg.h",
               "RelativeToolTip": "MFCProjectDlg.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACsAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-01T08:51:06.452Z",
               "EditorCaption": ""
@@ -41,26 +86,14 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MFCProjectDlg.cpp",
-              "DocumentMoniker": "C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProjectDlg.cpp",
+              "DocumentMoniker": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProjectDlg.cpp",
               "RelativeDocumentMoniker": "MFCProjectDlg.cpp",
-              "ToolTip": "C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProjectDlg.cpp",
+              "ToolTip": "C:\\Users\\Jeong\\source\\assignment\\mfcExam2\\MFCProject\\MFCProjectDlg.cpp",
               "RelativeToolTip": "MFCProjectDlg.cpp",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAcwOkAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAnwCEBAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-01T08:50:01.91Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MFCProject.rc - IDD_MFCPROJECT_DIALOG - Dialog",
-              "DocumentMoniker": "C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProject.rc",
-              "RelativeDocumentMoniker": "MFCProject.rc",
-              "ToolTip": "C:\\Users\\Jeong\\source\\assignment\\MFCProject\\MFCProject.rc - IDD_MFCPROJECT_DIALOG - Dialog",
-              "RelativeToolTip": "MFCProject.rc - IDD_MFCPROJECT_DIALOG - Dialog",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-01-01T08:41:17.246Z",
-              "EditorCaption": " - IDD_MFCPROJECT_DIALOG - Dialog"
             }
           ]
         }
