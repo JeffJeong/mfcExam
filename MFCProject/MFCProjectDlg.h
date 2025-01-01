@@ -50,4 +50,5 @@ public:
 	CEdit m_endY;
 	CEdit m_startX;
 	CEdit m_startY;
+	int radius;
 };

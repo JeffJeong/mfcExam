@@ -52,7 +52,7 @@ END_MESSAGE_MAP()
 
 CMFCProjectDlg::CMFCProjectDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_MFCPROJECT_DIALOG, pParent)
-{	
+{
 
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -147,7 +147,7 @@ void CMFCProjectDlg::OnPaint()
 		GetClientRect(&rect);
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
-
+		radius = 0;
 		// 아이콘을 그립니다.
 		dc.DrawIcon(x, y, m_hIcon);
 	}
@@ -168,7 +168,6 @@ CString g_strFileImage = _T("C:\\image\\save.bmp");
 
 void CMFCProjectDlg::OnBnClickedBtnDraw()
 {
-	//m_pDlgImage->ShowWindow(SW_SHOW);
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	// Draw 버튼 클릭시 (x1, y1) 좌표를 중심으로하는 랜덤한 크기의 원을 그립니다.
 	int nWidth = 640;
@@ -195,8 +194,8 @@ void CMFCProjectDlg::OnBnClickedBtnDraw()
 	int nCircleY = _wtoi(mText.GetBuffer()); //중점 Y좌표
 	mText.ReleaseBuffer();
 	int rRange = ((nWidth - nCircleX) > (nHeight - nCircleY)) ? (nCircleX) : (nCircleY);
-	int radius = rand() % rRange;
-	//drawCircle(fm, nCircleX, nCircleY, radius, 60);
+	radius = rand() % rRange;
+	drawCircle(fm, nCircleX, nCircleY, radius, 60);
 
 	//for (int j = 0; j < nHeight; j++) {
 	//	for (int i = 0; i < nWidth; i++) {
@@ -215,11 +214,54 @@ void CMFCProjectDlg::OnBnClickedBtnAction()
 	// Action 버튼 클릭시 (x1, y1) 좌표에서 (x2, y2) 좌표로 일정 픽셀 간격으로 원을 이동시키며,
 	// 이동할 때마다 실행파일이 위치한 폴더 내의 image 폴더에 bmp 또는 jpg(jpeg) 포맷으로 저장합니다.
 	// 이 때 메인UI가 프리징 상태가 되지 않도록 합니다.
-	for (int i = 0; i < 400; i++) {
-		moveRect();
-		Sleep(10);
-	}
 	
+	unsigned char* fm = (unsigned char*)m_image.GetBits();
+	//시작좌표값 불러오는코드
+	CString mText;
+	
+	//파일 경로 찾기
+	TCHAR chFilePath[256] = { 0, };
+
+	GetModuleFileName(NULL, chFilePath, 256);
+
+	CString strFolderPath(chFilePath);
+	strFolderPath = strFolderPath.Left(strFolderPath.ReverseFind('\\'));
+
+	CString filePath = strFolderPath + "\\image";
+	if (!PathFileExists(filePath)) {
+		// 폴더가 없다면 생성
+		CreateDirectory(filePath, NULL);
+	}
+	int n_pictures = 5;//원 이미지 갯수
+
+	m_startX.GetWindowText(mText);
+	int nCircle_X1 = _wtoi(mText.GetBuffer()); //시작점 X좌표
+	mText.ReleaseBuffer();
+	m_startY.GetWindowText(mText);
+	int nCircle_Y1 = _wtoi(mText.GetBuffer()); //시작점 Y좌표
+	mText.ReleaseBuffer();
+
+	m_endX.GetWindowText(mText);
+	int nCircle_X2 = _wtoi(mText.GetBuffer()); //종점 X좌표
+	mText.ReleaseBuffer();
+	m_endY.GetWindowText(mText);
+	int nCircle_Y2 = _wtoi(mText.GetBuffer()); //종점 Y좌표
+	mText.ReleaseBuffer();
+	int distX = (nCircle_X2 - nCircle_X1) / n_pictures;
+	int distY = (nCircle_Y2 - nCircle_Y1) / n_pictures;
+
+	for (int i = 0; i < n_pictures; i++){
+		drawCircle(fm, nCircle_X1, nCircle_Y1, radius, 0);
+		nCircle_X1 += distX;
+		nCircle_Y1 += distX;
+		drawCircle(fm, nCircle_X1, nCircle_Y1, radius, 60);
+		UpdateDisplay();
+		Sleep(100);
+
+		CString strFileName;
+		strFileName.Format(_T("%s\\saved_image_%d.png"), filePath, i + 1);
+		m_image.Save(strFileName);
+	}
 	//m_image.Save(g_strFileImage);
 }
 
@@ -248,6 +290,7 @@ void CMFCProjectDlg::UpdateDisplay() {
 void CMFCProjectDlg::moveRect() {
 	static int nSttX = 0;
 	static int nSttY = 0;
+
 	int nGray = 120;
 	int nWidth = m_image.GetWidth();
 	int nHeight = m_image.GetHeight();
